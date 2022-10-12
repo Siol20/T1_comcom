@@ -1,0 +1,11 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    {% formfield player.contribution label="Bitte geben Sie die Höhe des Betrags an (in 10-Cent-Schritten – 0, 10, 20, 30, ... 390, 400 Cent), den Sie beisteuern wollen:" %}
+
+    <br>
+
+    {{ next_button }}
+
+{% endblock %}

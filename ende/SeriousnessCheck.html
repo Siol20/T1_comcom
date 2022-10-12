@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+    <p>
+        Damit ist diese Studie weitestgehend abgeschlossen, vielen Dank! Im Folgenden bitten wir Sie, uns noch folgende,
+        kurze Fragen zu beantworten:
+        <br><br>
+        Für den Erfolg unserer Untersuchung ist es entscheidend, dass sie nur Angaben von Menschen enthält, die der
+        Studie ihre volle Aufmerksamkeit gewidmet haben. Andernfalls könnten jahrelange Anstrengungen (von
+        Wissenschaftler*innen und die Zeit anderer Teilnehmer*innen) umsonst gewesen sein. Sie bekommen auf jeden Fall
+        Ihre Auszahlung, egal wie Sie im Folgenden antworten. Bitte teilen Sie uns daher ehrlich mit, wie viel Mühe Sie
+        sich bei der Bearbeitung dieser Studie gegeben haben.
+    </p>
+
+    {{ formfield 'effort' label="Ich habe mir" }}
+
+    <div>Mühe bei der Bearbeitung gegeben.</div> <br><br>
+
+    <p>
+        Außerdem gibt es bei der Bearbeitung von Studien oft Ablenkungen (andere Menschen, Fernsehen, Musik, etc.).<br>
+        Bitte geben Sie an, wie viel Aufmerksamkeit Sie der Studie gewidmet haben. Nochmals, Sie bekommen auf jeden
+        Fall Ihre Auszahlung. Vielen Dank für Ihre Ehrlichkeit!
+
+    </p>
+
+    {{ formfield 'attention' label="Ich habe dieser Studie" }}
+
+    <div>Aufmerksamkeit gewidmet.</div> <br><br>
+
+    {{ formfield 'use_data' label="Ganz ehrlich, sollten wir Ihre Daten bei der Analyse unserer Studie verwenden? <b>Die Antwort beeinflusst nicht Ihre Auszahlung!</b>" }}
+
+    <br>
+
+    {% next_button %}
+
+{% endblock %}

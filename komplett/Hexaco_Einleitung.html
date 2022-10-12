@@ -1,0 +1,11 @@
+{{ block content }}
+<body>
+<p>
+    {{ if rec_check }}Vielen Dank!<br>{{ endif }}
+    Auf der folgenden Seite wird Ihnen der {{ if rec_check }}zweite{{ else }}erste{{ endif }}
+    Fragebogen präsentiert. Wählen Sie für die Fragen bitte die jeweils am besten zutreffende Antwort-Option aus.
+</p>
+</body>
+
+{{ next_button }}
+{{ endblock }}

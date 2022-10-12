@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+    <div class="w3-container">
+        <p align="right">
+            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Instruktionen erneut anzeigen</button>
+        </p>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-black">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+                <h2>Instruktionen</h2>
+                </header>
+                <div style="margin-top: 15px;" class="w3-container">
+                    <p>
+                        Sie interagieren im Folgenden mit drei anderen, zufällig ausgewählten Personen. Sie bleiben dabei anonym,
+                        genauso wie die drei Gruppenmitglieder Ihnen gegenüber anonym bleiben werden.
+                        <br><br>
+                        Jede Person in Ihrer Gruppe erhält einen Startbetrag von 4,- € für diese Interaktion.<br>
+                        Sie entscheiden, wie viel Sie von diesen 4,- € behalten wollen und wie viel (wenn überhaupt) Sie zu einem
+                        gemeinsamen Gruppenprojekt beitragen wollen. Die gesamte, von allen Gruppenmitgliedern zum gemeinsamen Projekt
+                        beigetragene Geldsumme wird verdoppelt und in gleicher Höhe unter den 4 Gruppenmitgliedern aufgeteilt.<br>
+                        Entsprechend bekommt jedes Gruppenmitglied pro 2€, die zu dem gemeinsamen Projekt beigetragen worden sind,
+                        1€ ausgezahlt. Wenn Jede*r seine gesamten 2,- € zu dem gemeinsamen Projekt beiträgt, wird das Geld von allen
+                        Gruppenmitgliedern verdoppelt: Jeder von Ihnen verdient dann 4,- €.
+                        <br><br>
+                        Wenn alle anderen Gruppenmitglieder 4,- € beitragen, aber Sie behalten Ihre 4,- €, verdienen Sie 10,- €,
+                        während die anderen nur 6,- € erhalten.
+                        <br>
+                        Wenn jedoch Sie als einzige*r 4,- € beitragen und die anderen Gruppenmitglieder behalten Ihre 4,- €, verdienen
+                        Sie nur 2,- €, während die anderen 6,- € erhalten.
+                        <br><br>
+                        Die anderen Personen sind <b>REAL</b> und werden tatsächlich eine Entscheidung treffen, die sich auf Ihren
+                        Auszahlungsbetrag auswirkt (im Falle, dass diese Interaktion für Ihre Auszahlung ausgewählt wird).
+                        <br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <p>
+        <i><font color="red" size="4">Ihre Eingabe war nicht korrekt. Bitte denken Sie noch einmal über Ihre Antwort nach.</font></i><br>
+    </p>
+
+    {% if player.compr_check_1st_1 != 400 and player.compr_check_2nd_1 != 400 %}
+        {% formfield player.compr_check_3rd_1 label="Wie viel müssen Sie beitragen (in Cent), um die höchste Auszahlung <b>für die gesamte Gruppe</b> zu erreichen?" %}
+    {% endif %}
+
+    {% if player.compr_check_1st_2 != 0 and player.compr_check_2nd_2 != 0 %}
+        {% formfield player.compr_check_3rd_2 label="Wie viel müssen Sie beitragen (in Cent), um <b>Ihr persönliches Einkommen</b> zu maximieren?" %}
+    {% endif %}
+
+    <br>
+
+    {{ next_button }}
+
+{% endblock %}

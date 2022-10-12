@@ -1,0 +1,99 @@
+{{ block styles }}
+    <style>
+        tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+
+{{ endblock }}
+{{ block content }}
+<p>
+    Bitte geben Sie an, wie stark Sie den folgenden Aussagen zustimmen.
+</p>
+
+
+<!-- tr -> row; th -> header; td -> spalte / zelle innerhalb der row; forfieldinform-schleife: für
+jedes formfield durchlaufen, field.label = "Frage x", td choice -> choices nebeneinander in neuer spalte aber gleicher
+row -->
+
+
+<table class="table" id="rec_table">
+
+    <tr>
+        <td style="width:360px"> </td>
+        <td style="width:60px; text-align:center">1<br>stimme überhaupt nicht zu</td>
+        <td style="width:60px;text-align:center">2</td>
+        <td style="width:60px; text-align:center">3</td>
+        <td style="width:60px; text-align:center">4</td>
+        <td style="width:60px; text-align:center">5</td>
+        <td style="width:60px;text-align:center">6</td>
+        <td style="width:60px; text-align:center">7<br>stimme vollkommen zu</td>
+    </tr>
+
+    {{ for field in form }}
+        <tr>
+            <th style="width:200px">{{ field.label }}
+            </th>
+            {{ for choice in field }}
+                <td style="width: 60px; text-align:center"> {{ choice }}  </td>
+            {{ endfor }}
+        </tr>
+    {{ endfor }}
+</table>
+<script>
+
+    function rowFunction(rec_table){
+        let table = document.getElementById(rec_table)
+        let row1 = table.insertRow(10)
+        let row2 = table.insertRow(20)
+        let cell0 = row1.insertCell(0)
+        let cell1 = row1.insertCell(1)
+        let cell2 = row1.insertCell(2)
+        let cell3 = row1.insertCell(3)
+        let cell4 = row1.insertCell(4)
+        let cell5 = row1.insertCell(5)
+        let cell6 = row1.insertCell(6)
+        let cell7 = row1.insertCell(7)
+        let cell0_2 = row2.insertCell(0)
+        let cell1_2 = row2.insertCell(1)
+        let cell2_2 = row2.insertCell(2)
+        let cell3_2 = row2.insertCell(3)
+        let cell4_2 = row2.insertCell(4)
+        let cell5_2 = row2.insertCell(5)
+        let cell6_2 = row2.insertCell(6)
+        let cell7_2 = row2.insertCell(7)
+        cell0.innerHTML = ""
+        cell1.innerHTML = "1<br>stimme überhaupt nicht zu"
+        cell1.style.textAlign = "center"
+        cell2.innerHTML = "2"
+        cell2.style.textAlign = "center"
+        cell3.innerHTML = "3"
+        cell3.style.textAlign = "center"
+        cell4.innerHTML = "4"
+        cell4.style.textAlign = "center"
+        cell5.innerHTML = "5"
+        cell5.style.textAlign = "center"
+        cell6.innerHTML = "6"
+        cell6.style.textAlign = "center"
+        cell7.innerHTML = "7<br>stimme vollkommen zu"
+        cell7.style.textAlign = "center"
+        cell0_2.innerHTML = ""
+        cell1_2.innerHTML = "1<br>stimme überhaupt nicht zu"
+        cell1_2.style.textAlign = "center"
+        cell2_2.innerHTML = "2"
+        cell2_2.style.textAlign = "center"
+        cell3_2.innerHTML = "3"
+        cell3_2.style.textAlign = "center"
+        cell4_2.innerHTML = "4"
+        cell4_2.style.textAlign = "center"
+        cell5_2.innerHTML = "5"
+        cell5_2.style.textAlign = "center"
+        cell6_2.innerHTML = "6"
+        cell6_2.style.textAlign = "center"
+        cell7_2.innerHTML = "7<br>stimme vollkommen zu"
+        cell7_2.style.textAlign = "center"
+    }
+
+    window.onload = rowFunction('rec_table');
+</script>
+
+{{ next_button }}
+{{ endblock }}

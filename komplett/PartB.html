@@ -1,0 +1,118 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 15px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width:600px) {
+          .column {
+            width: 100%;
+          }
+        }
+
+    </style>
+
+<body>
+
+    <p>
+        Nun folgt Teil <b>B</b> der Entscheidungssituation.
+        <br><br>
+        Im Folgenden sehen Sie mögliche Beiträge, die Ihre Gruppenmitglieder im Durchschnitt zum Gruppenprojekt
+        beitragen können. Bitte geben Sie die Höhe des Betrags an (in 10-Cent-Schritten - 0, 10, 20, 30, ... 390, 400
+        Cent), den Sie beisteuern würden, wenn der jeweilige Betrag tatsächlich dem <b>durchschnittlichen Beitrag</b>
+        Ihrer Gruppenmitglieder entsprechen würde. D.h. Sie geben an, wie viel Sie beitragen möchten, wenn Ihre
+        Gruppenmitglieder durchschnittlich 0, 20, 40, … 400 Cent beitragen würden.
+        <br><br>
+        Nachdem alle Gruppenmitglieder ihre Entscheidung getroffen haben, wird eine Person in der Gruppe zufällig
+        ausgewählt und der Durchschnitt der Beiträge der anderen Gruppenmitglieder berechnet. Die ausgewählte Person
+        trägt den Betrag zum Gruppenprojekt bei, den sie für das Feld, das dem Durchschnittswert am nächsten kommt,
+        angegeben hat.  Im Falle, dass z.B. Ihre Gruppenmitglieder in Teil A durchschnittlich 80 Cent beigetragen haben,
+        wird der Betrag für die Person auszahlungsrelevant, den Sie in Teil B in das Feld „80 Cent” eingegeben hat.
+        <br><br>
+        Bitte geben Sie den Betrag an, den Sie beitragen möchten, wenn Ihre Gruppenmitglieder
+        durchschnittlich den darüberstehenden Betrag beisteuern würden.
+
+    </p>
+
+
+    <div class="w3-container">
+        <p align="right">
+            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><b>Info</b></button>
+        </p>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-black">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+                <h2>Info</h2>
+                </header>
+                <div style="margin-top: 15px;" class="w3-container">
+                    <p>
+                        Stellen Sie sich vor, Sie wüssten, dass Ihre Gruppenmitglieder durchschnittlich 80 Cent beitragen. Wie viel
+                        würden Sie dann beitragen? Dies schreiben Sie in das Feld „80 Cent”.
+                        <img src="{{ static 'doc/StrategyMethod.jpg' }}" width="500px"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            {{ formfield 'cond_coop_0' }}
+            {{ formfield 'cond_coop_20' }}
+            {{ formfield 'cond_coop_40' }}
+            {{ formfield 'cond_coop_60' }}
+            {{ formfield 'cond_coop_80' }}
+            {{ formfield 'cond_coop_100' }}
+            {{ formfield 'cond_coop_120' }}
+        </div>
+        <div class="column">
+            {{ formfield 'cond_coop_140' }}
+            {{ formfield 'cond_coop_160' }}
+            {{ formfield 'cond_coop_180' }}
+            {{ formfield 'cond_coop_200' }}
+            {{ formfield 'cond_coop_220' }}
+            {{ formfield 'cond_coop_240' }}
+            {{ formfield 'cond_coop_260' }}
+        </div>
+        <div class="column">
+            {{ formfield 'cond_coop_280' }}
+            {{ formfield 'cond_coop_300' }}
+            {{ formfield 'cond_coop_320' }}
+            {{ formfield 'cond_coop_340' }}
+            {{ formfield 'cond_coop_360' }}
+            {{ formfield 'cond_coop_380' }}
+            {{ formfield 'cond_coop_400' }}
+        </div>
+    </div>
+
+    <br>
+
+    {{ next_button }}
+
+</body>
+</html>
+
+{% endblock %}

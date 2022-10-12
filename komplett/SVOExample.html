@@ -1,0 +1,38 @@
+
+{{ block styles }}
+	<style>
+		.svo-value {
+			border: 1px solid black;
+			font-size: x-large;
+			margin-right: 20em;
+			width: 1.5em;
+			text-align: right;
+		}
+		.svo-button {
+			padding-left: 1em;
+			padding-right: 0.5em;
+		}
+	</style>
+{{ endblock }}
+
+{{ block content }}
+	<p>
+		In dieser Aufgabe werden Sie bestimmen, wie Sie bestimmte Geldbeträge zwischen sich selbst und einer anderen
+		Person aufteilen möchten. Die andere Person ist ein*e andere*r, Ihnen unbekannte*r Studienteilnehmer*in. Sie
+		werden gegenseitig anonym bleiben. All Ihre Entscheidungen sind vollumfänglich vertraulich. Für jede der
+		folgenden Fragen, geben Sie bitte jeweils diejenige Geldverteilung an, welche Sie am meisten bevorzugen.
+		<br><br>
+		Ihre Entscheidungen werden jeweils sowohl Geld für Sie als auch für die andere Person generieren. Im
+		untenstehenden Beispiel hat sich eine Person entschieden, das Geld so aufzuteilen, dass sie selbst 45
+		Geldeinheiten erhält, während die anonyme andere Person 50 Geldeinheiten erhält.
+		<br><br>
+		Es gibt keine richtigen und falschen Antworten in dieser Aufgabe, es geht hier ausschließlich um Ihre
+		persönlichen Präferenzen. Wenn Sie Ihre Entscheidung gefällt haben, wählen Sie die entsprechende Option aus.
+		Sie können pro Frage nur eine Position markieren.<br>
+	</p>
+
+	<img src="{{ static 'SVO_Example.png' }}" width="760px"/>
+
+    {{ next_button }}
+
+{{ endblock }}

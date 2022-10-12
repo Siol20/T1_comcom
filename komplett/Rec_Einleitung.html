@@ -1,0 +1,11 @@
+{{ block content }}
+<body>
+<p>
+    Vielen Dank!<br>
+    Nun wird Ihnen der {{ if hexaco_check }}zweite{{ else }}erste{{ endif }}
+    Fragebogen präsentiert. Wählen Sie für die Fragen bitte die jeweils am besten zutreffende Antwort-Option aus.
+</p>
+</body>
+{{ next_button }}
+
+{{ endblock }}

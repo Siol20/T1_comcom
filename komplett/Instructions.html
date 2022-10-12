@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+    <p>
+        Sie interagieren im Folgenden mit drei anderen, zufällig ausgewählten Personen. Sie bleiben dabei anonym,
+        genauso wie die drei Gruppenmitglieder Ihnen gegenüber anonym bleiben werden. Jedes Gruppenmitglied erhält
+        dieselben Instruktionen.<br><br>
+        <b>Bitte beachten Sie:</b> Die Auszahlung für diese Entscheidungssituation besteht aus einem Fixum in Höhe von
+        2,- € zuzüglich einer variablen Auszahlung zwischen 2,- € und 10,- € (im Falle, dass diese
+        Entscheidungssituation für Ihre Auszahlung ausgewählt wird). Die Höhe Ihrer Auszahlung hängt von Ihren
+        Entscheidungen und denen Ihrer Gruppenmitglieder ab.
+        <br><br>
+        Die Entscheidungssituation ist zweigeteilt in Teil A und Teil B ist. Im Folgenden stellen wir Ihnen zunächst
+        <br>Teil A</b> der Entscheidungssituation vor.
+        <br><br>
+        Jede Person in Ihrer Gruppe erhält einen Startbetrag von 4,- € für diese Interaktion.<br>
+        Sie entscheiden, wie viel Sie von diesen 4,- € behalten wollen und wie viel (wenn überhaupt) Sie zu einem
+        gemeinsamen Gruppenprojekt beitragen wollen. Die gesamte, von allen Gruppenmitgliedern zum gemeinsamen Projekt
+        beigetragene Geldsumme wird verdoppelt und in gleicher Höhe unter den 4 Gruppenmitgliedern aufgeteilt.<br>
+        Entsprechend bekommt jedes Gruppenmitglied pro 2€, die zu dem gemeinsamen Projekt beigetragen worden sind,
+        1€ ausgezahlt. Wenn Jede*r seine gesamten 2,- € zu dem gemeinsamen Projekt beiträgt, wird das Geld von allen
+        Gruppenmitgliedern verdoppelt: Jeder von Ihnen verdient dann 4,- €.
+        <br><br>
+        Wenn alle anderen Gruppenmitglieder 4,- € beitragen, aber Sie behalten Ihre 4,- €, verdienen Sie 10,- €,
+        während die anderen nur 6,- € erhalten.
+        <br>
+        Wenn jedoch Sie als einzige*r 4,- € beitragen und die anderen Gruppenmitglieder behalten Ihre 4,- €, verdienen
+        Sie nur 2,- €, während die anderen 6,- € erhalten.
+        <br><br>
+        Die anderen Personen sind <b>REAL</b> und werden tatsächlich eine Entscheidung treffen, die sich auf Ihren
+        Auszahlungsbetrag auswirkt (im Falle, dass diese Interaktion für Ihre Auszahlung ausgewählt wird).
+        <br><br>
+        Auf den nächsten Seiten werden Ihnen zum besseren Verständnis Abbildungen gezeigt, die die soeben beschriebenen
+        Szenarien visualisieren.
+    </p>
+
+{{ next_button }}
+
+{% endblock %}

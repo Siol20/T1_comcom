@@ -1,0 +1,14 @@
+{{ block title }}
+    Einverständniserklärung
+{{ endblock }}
+
+{{ block content }}
+
+{{ formfield_errors 'einverstaendnis' }}
+        <body><input name="einverstaendnis" style="margin-left: -17px;" type="checkbox">
+        Ich erkläre mich hiermit bereit, an der Studie „Entscheidungen in Interaktionen“ teilzunehmen und bin mit der
+        auf der vorherigen Seite beschriebenen Verarbeitung meiner Daten einverstanden.
+        </input></body>
+<br><br><br>
+    {{ next_button }}
+{{ endblock }}
