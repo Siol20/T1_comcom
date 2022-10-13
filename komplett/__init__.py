@@ -995,7 +995,7 @@ class SVOExample(Page):
             c = [line for line in r]
             h = c[0]
             d = [dict(zip(h, l)) for l in c[1:]]
-            player.session.vars["SVO_Fullx3"] = [
+            player.session.vars["SVO_Fullx7"] = [
                 [[r, l["A" + str(i + 1)], l["B" + str(i + 1)]] for i in range(int(l["N"]))]
                 for r, l in enumerate(d)]
         import datetime
@@ -1012,7 +1012,7 @@ class SVOTask(Page):
 
     @staticmethod
     def vars_for_template(player):
-        SVO = player.session.vars["SVO_Fullx3"]
+        SVO = player.session.vars["SVO_Fullx7"]
         return dict(
             SVO = SVO
         )

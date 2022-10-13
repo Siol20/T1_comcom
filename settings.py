@@ -2,9 +2,9 @@ from os import environ
 
 SESSION_CONFIGS = [dict(
     name='T1',
-    app_sequence=['beginn', 'ende'],
+    app_sequence=['beginn', 'komplett', 'ende'],
     num_demo_participants=4,
-    svo_file = "SVO_Fullx3.csv"
+    svo_file ="SVO_Fullx7.csv"
  ),
 ]
 
