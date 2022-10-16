@@ -1,4 +1,6 @@
 from otree.api import *
+from string import digits
+from string import ascii_letters
 
 doc = """
 Your app description
@@ -61,10 +63,16 @@ class Code_Eingabe(Page):
         if len(values['code']) !=6:
             return 'Ihr Code muss sechsstellig sein'
 
+        if any([c not in digits for c in values['code'][4:6]]):
+            return "Bitte geben Sie Ihren Code im korrekten Format an"
+
+        if any([c not in ascii_letters for c in values['code'][0:4]]):
+            return "Bitte geben Sie Ihren Code im korrekten Format an"
+
     def before_next_page(player, timeout_happened):
         import datetime
         player.time_end = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-        player.participant.label = player.code
+        player.participant.personal_code = player.code
 
 
 class Einführung (Page):
@@ -72,4 +80,7 @@ class Einführung (Page):
         import datetime
         player.time_end = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
-page_sequence = [introduction, informed_consent, einwilligung, Code_Eingabe, Einführung]
+page_sequence = [
+    #introduction, informed_consent, einwilligung,
+    Code_Eingabe, Einführung
+]

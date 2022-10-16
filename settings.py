@@ -17,7 +17,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=0.01, participation_fee=4.00, doc="", max_number_participants = 1000
 )
 
-PARTICIPANT_FIELDS = [ 'treatment', 'task_rounds' ]
+PARTICIPANT_FIELDS = [ 'treatment', 'task_rounds', 'personal_code' ]
 SESSION_FIELDS = []
 
 # ISO-639 code

@@ -761,7 +761,7 @@ class Hexaco(Page):
                            'h63', 'h64', 'h65', 'h66', 'h67', 'h68', 'h69', 'h70', 'h71', 'h72', 'h73', 'h74',
                            'h75', 'h76', 'h77', 'h78', 'h79', 'h80', 'h81', 'h82', 'h83', 'h84', 'h85', 'h86',
                            'h87', 'h88', 'h89', 'h90', 'h91', 'h92', 'h93', 'h94', 'h95', 'h96', 'h97', 'h98',
-                           'h99', 'h100']
+                           'h99', 'h100', 'h101', 'h102', 'h103', 'h104']
     import random
     random.shuffle(random_hexaco_items)
     form_fields = random_hexaco_items

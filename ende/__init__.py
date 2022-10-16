@@ -78,24 +78,23 @@ class SeriousnessCheck(Page):
         player.study_completed = True
         import random
         player.Auszahlung = random.choice(["SVO", "Conditional_Cooperation"])
-        with open('LabIds/Participated.txt', 'a') as file:
-            if(player.participant.label != "123456"):
+        with open('_static/Participated.txt', 'a') as file:
+            if(player.participant.personal_code != "123456"):
                 file.write('\n')
-                file.write(player.participant.label)
+                file.write(player.participant.personal_code)
         import datetime
         player.time_end = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
         if player.use_data:
             player.srsn_check_pass = True
 
-        with open('LabIds/CountParticipation.txt', 'r') as file:
+        with open('_static/CountParticipation.txt', 'r') as file:
             txt = int(file.read())
             print(txt)
             txt += 1
             print(txt)
-        if(player.participant.label != "123456"):
-            if player.use_data:
-                with open('LabIds/CountParticipation.txt', 'w') as file:
+        if(player.participant.code != "123456") and player.use_data:
+                with open('_static/CountParticipation.txt', 'w') as file:
                     file.write(str(txt))
 
 class Debriefing(Page):
