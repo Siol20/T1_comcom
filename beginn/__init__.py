@@ -1,6 +1,6 @@
 from otree.api import *
 from string import digits
-from string import ascii_letters
+from string import ascii_uppercase
 
 doc = """
 Your app description
@@ -66,8 +66,8 @@ class Code_Eingabe(Page):
         if any([c not in digits for c in values['code'][4:6]]):
             return "Bitte geben Sie Ihren Code im korrekten Format an"
 
-        if any([c not in ascii_letters for c in values['code'][0:4]]):
-            return "Bitte geben Sie Ihren Code im korrekten Format an"
+        if any([c not in ascii_uppercase for c in values['code'][0:4]]):
+            return "Bitte geben Sie Ihren Code im korrekten Format an (nur Großbuchstaben und Zahlen)"
 
     def before_next_page(player, timeout_happened):
         import datetime
@@ -81,6 +81,6 @@ class Einführung (Page):
         player.time_end = datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
 page_sequence = [
-    #introduction, informed_consent, einwilligung,
+    introduction, informed_consent, einwilligung,
     Code_Eingabe, Einführung
 ]
