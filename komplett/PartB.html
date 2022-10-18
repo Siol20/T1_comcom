@@ -54,30 +54,6 @@
 
     </p>
 
-
-    <div class="w3-container">
-        <p align="right">
-            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><b>Info</b></button>
-        </p>
-
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-                <header class="w3-container w3-black">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-display-topright">&times;</span>
-                <h2>Info</h2>
-                </header>
-                <div style="margin-top: 15px;" class="w3-container">
-                    <p>
-                        Stellen Sie sich vor, Sie wüssten, dass Ihre Gruppenmitglieder durchschnittlich 80 Cent beitragen. Wie viel
-                        würden Sie dann beitragen? Dies schreiben Sie in das Feld „80 Cent”.
-                        <img src="{{ static 'doc/StrategyMethod.jpg' }}" width="500px"/>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="row">
         <div class="column">
             {{ formfield 'cond_coop_0' }}
